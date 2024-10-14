@@ -3,16 +3,18 @@ import { useEffect } from "react";
 export const useRegisterSW = (path = "/workers/service-worker.js") => {
   useEffect(() => {
     if ("serviceWorker" in navigator) {
+      console.log("waiting too !!!");
       window.addEventListener("load", () => {
-        navigator.serviceWorker
+        console.log("waiting !!!");
+        navigator.reg
           .register(path)
-          .then((serviceWorker) => {
-            console.log("Service worker registered", serviceWorker);
-            if (serviceWorker.installing) {
-              console.log("installing worker");
-            } else if (serviceWorker.waiting) {
+          .then((reg) => {
+            console.log("registering service worker", reg);
+            if (reg.installing) {
+              console.log("installing service worker");
+            } else if (reg.waiting) {
               console.log("waiting service worker");
-            } else if (serviceWorker.active) {
+            } else if (reg.active) {
               console.log("activating service worker");
             }
           })

@@ -1,11 +1,22 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Menu from "./Menu";
 import { Outlet } from "react-router";
-import "../css/layout.css";
+import "./layout.css";
 import PagesHeader from "./PagesHeader";
+import { useFixHeader } from "../custom/fix-header";
+import { WeatherContext } from "../WeatherProvider";
+import ErrorFeedback from "./Error";
+import AllowLoc from "./AllowLoc";
+import Loading from "./Loading";
 
 export default function Layout() {
   const [navStatus, setNavStatus] = useState(false);
+ // const status = useFixHeader();
+  const {current, denied, errorMsg, loadingFeedback} = useContext(WeatherContext);
+  if (false) return <AllowLoc />;
+  if (false) return <ErrorFeedback error={errorMsg} />
+  if (false) return <Loading />;
+
   return (
     <main id="layout" data-testid="menu">
       <Menu
@@ -14,10 +25,8 @@ export default function Layout() {
         setNavStatus={setNavStatus}
       />
       <section id="main" className={navStatus ? "active" : ""}>
-        <PagesHeader weather={27} />
-        <section id="outlet">
-          <Outlet />
-        </section>
+        <PagesHeader {...current} status={true} />
+        <Outlet />
       </section>
     </main>
   );

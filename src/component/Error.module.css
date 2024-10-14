@@ -1,0 +1,19 @@
+.error {
+    text-align: center;
+    margin-top: 20vh;
+}
+.individual {
+    margin: 5px 10px;
+}
+.svg_wraper {
+    margin: 50px 0;
+}
+.error_svg {
+    width: 40%;
+}
+
+@media only screen and (min-width: 980px) {
+    .error_svg {
+        width: 15vh;
+    }
+}

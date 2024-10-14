@@ -1,12 +1,10 @@
 import React from "react";
 import { FaGear, FaLocationPin } from "react-icons/fa6";
 import PropTypes from "prop-types";
-import { useFixHeader } from "../custom/fix-header";
 
-export default function PagesHeader({ weather }) {
-  const status = useFixHeader();
+export default function PagesHeader({ temperature_2m, weather_code, status }) {
   return (
-    <header id="header" className={status ? "active" : ""}>
+    <header id="header" className={status ? "active" : "reserve"}>
       <div id="logo-wraper">
         <img src="img/logo.png" alt="logo" id="logo" />
       </div>
@@ -18,7 +16,7 @@ export default function PagesHeader({ weather }) {
           <div id="current-location">Kano</div>
         </div>
         <div id="curr-weather-info">
-          <span id="curr-temp">{weather}</span>
+          <span id="curr-temp">{temperature_2m}</span>
           <span id="weather-icon"></span>
         </div>
         <div id="settings">
@@ -31,4 +29,5 @@ export default function PagesHeader({ weather }) {
 
 PagesHeader.propTypes = {
   weather: PropTypes.number,
+  status: PropTypes.bool.isRequired
 };

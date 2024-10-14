@@ -57,15 +57,17 @@
     align-items: center;
     box-shadow: 0px 0px 10px 0px gray;
     padding: 8px 0;
-    position: absolute;
-    left: 0;
-    top: 0;
+    transition: top 0.5s;
+    position: fixed;
 }
 #header.active {
-    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    background: var(--bg-color);
+}
+#header.reserve {
+    top: -70px;
+    left: 0;
     background: var(--bg-color);
 }
 #logo-wraper {
@@ -88,8 +90,11 @@
     height: 100vh;
     background: Var(--dft-bg-color);
 }
-#outlet {
-    margin: 60px 0 0 0;
+/* -------- section of pages components ------- */
+.pages {
+    height: 100vh;
+    overflow: auto;
+    padding: 55px 0 0 0;
 }
 
 /* --------- responsive design of tablet --------- */
@@ -133,20 +138,35 @@
         font-size: 25px;
     }
 
+    /* --------- main section style -------- */
+    #main {
+        margin: 0 0 0 50px;
+    }
+    #main.active {
+        margin: 0 0 0 160px;
+    }
+    
+
     /* --------- header section style ------- */
+    #header {
+        left: 50px;
+        width: calc(100% - 50px);
+    }
+    #main.active #header {
+        left: 160px;
+        width: calc(100% - 160px);
+    }
+    #header.active {
+        left: inherit;
+    }
+    #header.reserve {
+        top: 0;
+        left: inherit;
+    }
     #logo {
         width: 130px;
     }
     #more {
         flex-basis: 30%;
-    }
-
-    /* --------- main section style -------- */
-    #main {
-        flex-basis: 100%;
-        margin: 0 0 0 50px;
-    }
-    #main.active {
-        margin: 0 0 0 160px;
     }
 }

@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PageLink from "./PageLink";
 import PropTypes from "prop-types";
 import { FaHome, FaSearch, FaStar } from "react-icons/fa";
 import { FaBars } from "react-icons/fa6";
 import { useActivePage } from "../custom/activepage";
 
-export default function Menu({ navStatus, setNavStatus = (f) => f }) {
+export default function Menu({
+  navStatus,
+  setNavStatus = f => f
+}) {
   const activatePage = useActivePage("home-p");
+
   return (
     <section id="navs" className={navStatus ? "active" : ""}>
       <section id="n-o-wraper">
@@ -23,6 +27,7 @@ export default function Menu({ navStatus, setNavStatus = (f) => f }) {
         url="/"
         icon={<FaHome />}
         title="Home"
+        data_attr = "home"
       />
       <PageLink
         setActive={activatePage}
@@ -30,6 +35,7 @@ export default function Menu({ navStatus, setNavStatus = (f) => f }) {
         url="/search"
         icon={<FaSearch />}
         title="Search"
+        data_attr = "search"
       />
       <PageLink
         setActive={activatePage}
@@ -37,6 +43,7 @@ export default function Menu({ navStatus, setNavStatus = (f) => f }) {
         url="/tagcities"
         icon={<FaStar />}
         title="Tag Cities"
+        data_attr = "tag-cities"
       />
     </section>
   );
@@ -44,5 +51,5 @@ export default function Menu({ navStatus, setNavStatus = (f) => f }) {
 
 Menu.propTypes = {
   navStatus: PropTypes.bool.isRequired,
-  setNavStatus: PropTypes.func.isRequired,
+  setNavStatus: PropTypes.func.isRequired
 };

@@ -1,14 +1,19 @@
 import { useEffect, useState } from "react";
 
 export const useFixHeader = () => {
-  const [status, setStatus] = useState(false);
+  const [status, setStatus] = useState(true);
   useEffect(() => {
     let distanceScroll;
-    document.addEventListener("scroll", () => {
-      console.log(pageYOffset);
-      if (distanceScroll > pageYOffset && pageYOffset > 50) setStatus(true);
-      if (distanceScroll < pageYOffset) setStatus(false);
-      distanceScroll = pageYOffset;
+    const page = document.querySelector(".pages.active");
+    const trackScroll = (node) => {
+      console.log(node.scrollTop);
+      if (distanceScroll > node.scrollTop) setStatus(true);
+      if (distanceScroll < node.scrollTop && node.scrollTop > 50)
+        setStatus(false);
+      distanceScroll = node.scrollTop;
+    };
+    page.addEventListener("scroll", () => {
+      trackScroll(page);
     });
   });
   return status;

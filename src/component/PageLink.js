@@ -7,6 +7,7 @@ export default function PageLink({
   url,
   icon,
   title,
+  data_attr,
   setActive = (f) => f,
 }) {
   return (
@@ -17,6 +18,7 @@ export default function PageLink({
       onClick={() => {
         setActive(id);
       }}
+      data-active={data_attr}
     >
       <span className="page-icon">{icon}</span>
       <span className="page-titles">{title}</span>

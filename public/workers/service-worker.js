@@ -1,14 +1,13 @@
 const cache_name = "curr-weather";
-const cacheAssets = [
-    "../offline.html"
+const cache_assets = [
+    "offline.html"
 ];
 
 self.addEventListener("install", e => {
-    self.skipWaiting();
     console.log("Service worker: installed");
     e.waitUntil(
         caches.open(cache_name)
-        .then( cache => cache.addAll(cacheAssets))
+        .then(cache => cache.addAll(cache_assets))
     );
 });
 
@@ -38,6 +37,6 @@ self.addEventListener("fetch", e => {
                 }
                 return fetch(e.request);
             })
-            .catch(() => caches.match("../offline.html"))
+            .catch(() => caches.match("offline.html"))
     );
 });
