@@ -1,5 +1,3 @@
-import React from "react";
 
-export default function FullWeatherInfo() {
-    
-}
+
+export default function FullWeatherInfo() {}

@@ -9,7 +9,7 @@ export function useActivePage(initialId) {
   const [targetId, setTargetId] = useState(
     getCurrentActive("id") ? getCurrentActive("id") : initialId,
   );
-  
+
   useEffect(() => {
     setCurrentActive("id", targetId);
     const target = document.getElementById(targetId);
@@ -26,9 +26,9 @@ export function useActivePage(initialId) {
     }
     target.classList.add("active");
     active_page.classList.add("active");
-  }, [targetId]); 
+  }, [targetId]);
 
   return (target) => {
-      setTargetId(target);
-    }
+    setTargetId(target);
+  };
 }

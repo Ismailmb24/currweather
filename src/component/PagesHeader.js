@@ -2,7 +2,7 @@ import React from "react";
 import { FaGear, FaLocationPin } from "react-icons/fa6";
 import PropTypes from "prop-types";
 
-export default function PagesHeader({ temperature_2m, weather_code, status }) {
+export default function PagesHeader({ temperature_2m, status }) {
   return (
     <header id="header" className={status ? "active" : "reserve"}>
       <div id="logo-wraper">
@@ -28,6 +28,6 @@ export default function PagesHeader({ temperature_2m, weather_code, status }) {
 }
 
 PagesHeader.propTypes = {
-  weather: PropTypes.number,
-  status: PropTypes.bool.isRequired
+  temperature_2m: PropTypes.number,
+  status: PropTypes.bool.isRequired,
 };

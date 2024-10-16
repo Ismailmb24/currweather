@@ -1,14 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import PageLink from "./PageLink";
 import PropTypes from "prop-types";
 import { FaHome, FaSearch, FaStar } from "react-icons/fa";
 import { FaBars } from "react-icons/fa6";
 import { useActivePage } from "../custom/activepage";
 
-export default function Menu({
-  navStatus,
-  setNavStatus = f => f
-}) {
+export default function Menu({ navStatus, setNavStatus = (f) => f }) {
   const activatePage = useActivePage("home-p");
 
   return (
@@ -27,7 +24,7 @@ export default function Menu({
         url="/"
         icon={<FaHome />}
         title="Home"
-        data_attr = "home"
+        data_attr="home"
       />
       <PageLink
         setActive={activatePage}
@@ -35,7 +32,7 @@ export default function Menu({
         url="/search"
         icon={<FaSearch />}
         title="Search"
-        data_attr = "search"
+        data_attr="search"
       />
       <PageLink
         setActive={activatePage}
@@ -43,7 +40,7 @@ export default function Menu({
         url="/tagcities"
         icon={<FaStar />}
         title="Tag Cities"
-        data_attr = "tag-cities"
+        data_attr="tag-cities"
       />
     </section>
   );
@@ -51,5 +48,5 @@ export default function Menu({
 
 Menu.propTypes = {
   navStatus: PropTypes.bool.isRequired,
-  setNavStatus: PropTypes.func.isRequired
+  setNavStatus: PropTypes.func.isRequired,
 };

@@ -5,13 +5,12 @@
   "form-factor": "wide",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#ff4810",
   "background_color": "#ffffff",
   "icons": [
     {
-      "src": "/img/favicon.ico",
+      "src": "/img/logo64.png",
       "sizes": "64x64",
-      "type": "image/x-icon"
+      "type": "image/png"
     },
     {
       "src": "/img/logo192.png",

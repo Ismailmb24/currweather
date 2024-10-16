@@ -4,10 +4,8 @@ import { Route, Routes } from "react-router";
 import Home from "./component/Home";
 import Search from "./component/Search";
 import TagCities from "./component/TagCities";
-import { useRegisterSW } from "./custom/register-sw";
 
 function App() {
-  useRegisterSW();
   return (
     <Routes>
       <Route path="/" element={<Layout />}>

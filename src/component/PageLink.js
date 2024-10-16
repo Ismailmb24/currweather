@@ -32,4 +32,5 @@ PageLink.propTypes = {
   icon: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
   setActive: PropTypes.func.isRequired,
+  data_attr: PropTypes.string.isRequired,
 };
