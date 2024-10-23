@@ -2,7 +2,7 @@ const cache_name = "curr-weather";
 const cache_assets = [
     "/offline.html",
     "/svg/wifi-off.svg",
-    "/img/logo new.png",
+    "/img/logo.png",
 ];
 
 self.addEventListener("install", e => {

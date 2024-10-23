@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 export const useFindCurrLoc = () => {
   const [longitude, setLong] = useState();
   const [latitude, setLat] = useState();
+  const [timezone, setTimeZone] = useState();
   const [denied, setDenied] = useState();
 
   const setLoc = (position) => {
@@ -14,15 +15,23 @@ export const useFindCurrLoc = () => {
   };
 
   useEffect(() => {
+    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    setTimeZone(timezone);
+    console.log(timezone);
+    
+  })
+
+  useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(setLoc, statusSetter);
       console.log("finding location");
     }
   }, []);
 
-  return {
+  return [
     longitude,
     latitude,
+    timezone,
     denied,
-  };
+  ];
 };

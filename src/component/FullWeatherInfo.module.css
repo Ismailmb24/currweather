@@ -1,0 +1,24 @@
+.full_weather_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+    gap: 10px;
+    padding: 40px 0px;
+}
+.loc_pin {
+    color: #ff4810;
+}
+.basic_w_info {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+.temp {
+    font-size: 80px;
+}
+.weather_icon {
+    width: 200px;
+}
+

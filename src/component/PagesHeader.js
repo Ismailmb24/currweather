@@ -1,28 +1,24 @@
-import React from "react";
-import { FaGear, FaLocationPin } from "react-icons/fa6";
+import React, { useContext } from "react";
+import { MapPin, Lock, Moon } from "react-feather";
 import PropTypes from "prop-types";
+import TempInfo from "./TempInfo";
+import { WeatherContext } from "../WeatherProvider";
 
-export default function PagesHeader({ temperature_2m, status }) {
+export default function PagesHeader({ status }) {
+  const {data} = useContext(WeatherContext);
+  const {current} = data;
+  console.log("data-current:", data);
+  
   return (
     <header id="header" className={status ? "active" : "reserve"}>
-      <div id="logo-wraper">
-        <img src="img/logo.png" alt="logo" id="logo" />
-      </div>
-      <section id="more">
         <div id="curr-location">
-          <div id="curr-location-icon">
-            <FaLocationPin />
-          </div>
-          <div id="current-location">Kano</div>
+          <MapPin id="curr-loc-icon" />
+          <span id="current-location">Kano</span>
         </div>
-        <div id="curr-weather-info">
-          <span id="curr-temp">{temperature_2m}</span>
-          <span id="weather-icon"></span>
-        </div>
+        <TempInfo {...current} />
         <div id="settings">
-          <FaGear />
+          <Moon />
         </div>
-      </section>
     </header>
   );
 }

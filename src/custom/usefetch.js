@@ -6,9 +6,7 @@ export const useFetch = (url) => {
   const [errorMsg, setErrorMsg] = useState();
 
   useEffect(() => {
-    console.log(errorMsg);
     if (!url) return;
-    setLoading(true);
     fetch(url)
       .then((res) => res.json())
       .then(setData)
@@ -16,9 +14,9 @@ export const useFetch = (url) => {
       .catch(setErrorMsg);
   }, [url]);
 
-  return {
-    data2: data,
+  return [
+    data,
     loadingFeedback,
     errorMsg,
-  };
+  ];
 };

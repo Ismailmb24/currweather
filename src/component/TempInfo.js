@@ -1,15 +1,16 @@
 import React from "react";
-import Icon from "./Icon";
 import PropTypes from "prop-types";
+import WeatherIcon from "./WeatherIcon";
 
-export default function TempInfo({ temp, weather_code, isday }) {
+export default function TempInfo({ style, temperature_2m, weather_code, is_day }) {
+  const temp = Math.round(temperature_2m);
   return (
-    <div id="basic-w-info">
-      <div>
+    <div className={style.basic_w_info}>
+      <div className={style.temp}>
         {temp}
         <sup>o</sup>
       </div>
-      <Icon code={weather_code} isday={isday} />
+      <WeatherIcon style={style} code={weather_code} is_day={is_day} />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-export const w_c_interpre = {
+export const weather_code_int = {
     0: {
         name: "Clear sky",
         icons: {
@@ -9,8 +9,8 @@ export const w_c_interpre = {
     1: {
         name: "Mainly cloudy",
         icons: {
-            day: "svg/cloudy-day.svg",
-            night: "svg/cloudy-night.svg"
+            day: "svg/cloudy-day-1.svg",
+            night: "svg/cloudy-night-1.svg"
         }
     },
     2: {
