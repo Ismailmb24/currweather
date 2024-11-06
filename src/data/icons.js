@@ -22,7 +22,7 @@ export const weather_code_int = {
         }
     },
     3: {
-        name: "cloudy",
+        name: "Cloudy",
         icons: {
             day: "svg/cloudy.svg",
             night: "svg/cloudy.svg"
@@ -31,15 +31,15 @@ export const weather_code_int = {
     45: {
         name: "Fog",
         icons: {
-            day: "svg/cloudy-day.svg",
-            night: "svg/cloudy-night.svg"
+            day: "svg/cloudy-day-1.svg",
+            night: "svg/cloudy-night-1.svg"
         }
     },
     48: {
         name: "Fog",
         icons: {
-            day: "svg/cloudy-day.svg",
-            night: "svg/cloudy-night.svg"
+            day: "svg/cloudy-day-1.svg",
+            night: "svg/cloudy-night-1.svg"
         }
     },
     51: {
@@ -106,7 +106,7 @@ export const weather_code_int = {
         }
     },
     67: {
-        name: "heavy freezing rain",
+        name: "Heavy freezing rain",
         icons: {
             day: "svg/light-freezing-rain.svg",
             night: "svg/light-freezing-rain.svg"

@@ -1,75 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import SearchField from "./SearchField";
+import "./Search.css";
 
 export default function Search() {
+  const [search, setSearch] = useState("");
   return (
     <section id="search" className="pages">
-      <h1>Search</h1>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum at
-        tenetur deleniti beatae aliquid perferendis nam, qui doloremque vel.
-        Voluptatum, minima mollitia ullam hic et voluptatibus. Voluptate sed
-        quae alias! Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-        Earum at tenetur deleniti beatae aliquid perferendis nam, qui doloremque
-        vel. Voluptatum, minima mollitia ullam hic et voluptatibus. Voluptate
-        sed quae alias! Lorem ipsum dolor, sit amet consectetur adipisicing
-        elit. Earum at tenetur deleniti beatae aliquid perferendis nam, qui
-        doloremque vel. Voluptatum, minima mollitia ullam hic et voluptatibus.
-        Voluptate sed quae alias! Lorem ipsum dolor, sit amet consectetur
-        adipisicing elit. Earum at tenetur deleniti beatae aliquid perferendis
-        nam, qui doloremque vel. Voluptatum, minima mollitia ullam hic et
-        voluptatibus. Voluptate sed quae alias! Lorem ipsum dolor, sit amet
-        consectetur adipisicing elit. Earum at tenetur deleniti beatae aliquid
-        perferendis nam, qui doloremque vel. Voluptatum, minima mollitia ullam
-        hic et voluptatibus. Voluptate sed quae alias! Lorem ipsum dolor, sit
-        amet consectetur adipisicing elit. Earum at tenetur deleniti beatae
-        aliquid perferendis nam, qui doloremque vel. Voluptatum, minima mollitia
-        ullam hic et voluptatibus. Voluptate sed quae alias! Lorem ipsum dolor,
-        sit amet consectetur adipisicing elit. Earum at tenetur deleniti beatae
-        aliquid perferendis nam, qui doloremque vel. Voluptatum, minima mollitia
-        ullam hic et voluptatibus. Voluptate sed quae alias! Lorem ipsum dolor,
-        sit amet consectetur adipisicing elit. Earum at tenetur deleniti beatae
-        aliquid perferendis nam, qui doloremque vel. Voluptatum, minima mollitia
-        ullam hic et voluptatibus. Voluptate sed quae alias! Lorem ipsum dolor,
-        sit amet consectetur adipisicing elit. Earum at tenetur deleniti beatae
-        aliquid perferendis nam, qui doloremque vel. Voluptatum, minima mollitia
-        ullam hic et voluptatibus. Voluptate sed quae alias! Lorem ipsum dolor,
-        sit amet consectetur adipisicing elit. Earum at tenetur deleniti beatae
-        aliquid perferendis nam, qui doloremque vel. Voluptatum, minima mollitia
-        ullam hic et voluptatibus. Voluptate sed quae alias! Lorem ipsum dolor,
-        sit amet consectetur adipisicing elit. Earum at tenetur deleniti beatae
-        aliquid perferendis nam, qui doloremque vel. Voluptatum, minima mollitia
-        ullam hic et voluptatibus. Voluptate sed quae alias! Lorem ipsum dolor,
-        sit amet consectetur adipisicing elit. Earum at tenetur deleniti beatae
-        aliquid perferendis nam, qui doloremque vel. Voluptatum, minima mollitia
-        ullam hic et voluptatibus. Voluptate sed quae alias! Lorem ipsum dolor,
-        sit amet consectetur adipisicing elit. Earum at tenetur deleniti beatae
-        aliquid perferendis nam, qui doloremque vel. Voluptatum, minima mollitia
-        ullam hic et voluptatibus. Voluptate sed quae alias! Lorem ipsum dolor,
-        sit amet consectetur adipisicing elit. Earum at tenetur deleniti beatae
-        aliquid perferendis nam, qui doloremque vel. Voluptatum, minima mollitia
-        ullam hic et voluptatibus. Voluptate sed quae alias! Lorem ipsum dolor,
-        sit amet consectetur adipisicing elit. Earum at tenetur deleniti beatae
-        aliquid perferendis nam, qui doloremque vel. Voluptatum, minima mollitia
-        ullam hic et voluptatibus. Voluptate sed quae alias! Lorem ipsum dolor,
-        sit amet consectetur adipisicing elit. Earum at tenetur deleniti beatae
-        aliquid perferendis nam, qui doloremque vel. Voluptatum, minima mollitia
-        ullam hic et voluptatibus. Voluptate sed quae alias! Lorem ipsum dolor,
-        sit amet consectetur adipisicing elit. Earum at tenetur deleniti beatae
-        aliquid perferendis nam, qui doloremque vel. Voluptatum, minima mollitia
-        ullam hic et voluptatibus. Voluptate sed quae alias! Lorem ipsum dolor,
-        sit amet consectetur adipisicing elit. Earum at tenetur deleniti beatae
-        aliquid perferendis nam, qui doloremque vel. Voluptatum, minima mollitia
-        ullam hic et voluptatibus. Voluptate sed quae alias! Lorem ipsum dolor,
-        sit amet consectetur adipisicing elit. Earum at tenetur deleniti beatae
-        aliquid perferendis nam, qui doloremque vel. Voluptatum, minima mollitia
-        ullam hic et voluptatibus. Voluptate sed quae alias! Lorem ipsum dolor,
-        sit amet consectetur adipisicing elit. Earum at tenetur deleniti beatae
-        aliquid perferendis nam, qui doloremque vel. Voluptatum, minima mollitia
-        ullam hic et voluptatibus. Voluptate sed quae alias! Lorem ipsum dolor,
-        sit amet consectetur adipisicing elit. Earum at tenetur deleniti beatae
-        aliquid perferendis nam, qui doloremque vel. Voluptatum, minima mollitia
-        ullam hic et voluptatibus. Voluptate sed quae alias!
-      </p>
+      <SearchField setSearch={setSearch} />
     </section>
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import PageLink from "./PageLink";
-import { Home, Search, Star } from "react-feather";
+import { Grid, Search, Star } from "react-feather";
 import { useActivePage } from "../custom/activepage";
 
 export default function Menu() {
@@ -10,13 +10,12 @@ export default function Menu() {
     <section id="navs">
       <section id="logo-wraper">
         <img src="img/logo.png" alt="logo" id="logo" />
-        <span id="logo-title">CurrWeather</span>
       </section>
       <PageLink
         setActive={activatePage}
         id={"home-p"}
         url="/"
-        icon={<Home />}
+        icon={<Grid />}
         title="Home"
         data_attr="home"
       />
@@ -33,7 +32,7 @@ export default function Menu() {
         id={"tagcities-p"}
         url="/tagcities"
         icon={<Star />}
-        title="Tag Cities"
+        title="Favorite"
         data_attr="tag-cities"
       />
     </section>

@@ -1,0 +1,14 @@
+.hourly {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.basic_w_info {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+.weather_icon {
+    width: 50px;
+}

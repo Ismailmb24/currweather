@@ -10,13 +10,14 @@ export default function TempInfo({ style, temperature_2m, weather_code, is_day }
         {temp}
         <sup>o</sup>
       </div>
-      <WeatherIcon style={style} code={weather_code} is_day={is_day} />
+      <WeatherIcon style={style} weather_code={weather_code} is_day={is_day} />
     </div>
   );
 }
 
 TempInfo.propTypes = {
-  temp: PropTypes.number, 
+  style: PropTypes.object,
+  temperature_2m: PropTypes.number, 
   weather_code: PropTypes.number, 
-  isday: PropTypes.number,
+  is_day: PropTypes.number,
 }

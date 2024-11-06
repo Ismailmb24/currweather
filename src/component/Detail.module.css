@@ -1,0 +1,30 @@
+.detail {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    gap: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px 0px gray;
+}
+.icon_wraper svg{
+    color: #ff4810;
+}
+.title {
+    font-size: 12px;
+}
+.value {
+    font-size: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+    .detail {
+        gap: 20px;
+    }
+    .title {
+        font-size: 20px;
+    }
+    .value {
+        font-size: 30px;
+    }
+}

@@ -1,0 +1,8 @@
+.heading {
+    font-size: 25px;
+    margin: 10px 0px;
+}
+.forcast_table {
+    border-collapse: collapse;
+    width: 100%;
+}
