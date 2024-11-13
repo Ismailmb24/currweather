@@ -1,17 +1,13 @@
 import React from "react";
 import "./Home.css";
-import FullWeatherInfo from "./FullWeatherInfo.js";
-import WeatherDetails from "./WeatherDetails.js";
-import HourlyForcast from "./HourlyForcast.js";
-import WeekForcast from "./WeekForcast.js";
+import { useWeather } from "../WeatherProvider";
+import FullWDScreen from "./FullWDScreen.js";
 
 export default function Home() {
+  const {data, results} = useWeather();
   return (
     <section id="home" className="pages">
-      <FullWeatherInfo />
-      <WeatherDetails />
-      <HourlyForcast />
-      <WeekForcast />
+      <FullWDScreen data={data} loc_data={results} />
     </section>
   );
 }

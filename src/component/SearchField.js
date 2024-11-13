@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import style from "./SearchField.module.css";
+import { useCities } from "../CitiesProvider";
 
-export default function SearchField({setSearch = f => f}) {
+export default function SearchField() {
     const [text, setText] = useState("");
+    const {onSearch} = useCities();
 
     return(
         <section className={style.search_sec}>
@@ -11,7 +13,7 @@ export default function SearchField({setSearch = f => f}) {
             autoComplete="off"
             onSubmit={e => {
                 e.preventDefault();
-                setSearch(text);
+                onSearch(text);
                 setText("");
             }}>
                 <input 

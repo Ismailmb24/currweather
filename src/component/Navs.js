@@ -1,15 +1,16 @@
 import React from "react";
 import PageLink from "./PageLink";
+import logo from "./logo.png";
 import { Grid, Search, Star } from "react-feather";
 import { useActivePage } from "../custom/activepage";
 
-export default function Menu() {
+export default function Navs() {
   const activatePage = useActivePage("home-p");
 
   return (
     <section id="navs">
       <section id="logo-wraper">
-        <img src="img/logo.png" alt="logo" id="logo" />
+        <img src={logo} alt="logo" id="logo" />
       </section>
       <PageLink
         setActive={activatePage}

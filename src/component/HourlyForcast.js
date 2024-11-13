@@ -4,9 +4,8 @@ import HourlyDetail from "./HourlyDetail";
 import style from "./HourlyForcast.module.css";
 import { FaGreaterThan, FaLessThan } from "react-icons/fa";
 
-export default function HourlyForcast() {
+export default function HourlyForcast({data}) {
     const [scrlX, setScrollX] = useState(0);
-    const {data} = useContext(WeatherContext);
     const {hourly} = data;
     const hourlyDetails = [...Array(24)].map((detail, i) => ({
         time: hourly.time[i],

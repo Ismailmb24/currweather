@@ -3,8 +3,7 @@ import { WeatherContext } from "../WeatherProvider";
 import style from "./WeekForcast.module.css";
 import DayForcastDetail from "./DayForcastDetail";
 
-export default function WeekForcast() {
-    const {data} = useContext(WeatherContext);
+export default function WeekForcast({data}) {
     const {daily} = data;
     const daysForcast = [...Array(7)].map((forcast, i) => ({
         time: daily.time[i],

@@ -3,6 +3,7 @@ import { useReadableTime } from "../custom/useReadableTime";
 import style from "./DayForcastDetail.module.css";
 import WeatherIcon from "./WeatherIcon";
 import WeatherDesc from "./WeatherDesc";
+import AverageTemp from "./AverageTemp";
 
 export default function DayForcastDetail({
     time,
@@ -22,7 +23,13 @@ export default function DayForcastDetail({
                 <WeatherIcon style={style} weather_code={weather_code} is_day={1} />
                 <WeatherDesc style={style} weather_code={weather_code} />
             </td>
-            <td>{max_temp}<sup>o</sup>  / {min_temp}<sup>o</sup></td>
+            <td>
+                <AverageTemp 
+                style={style}
+                temperature_2m_max={temperature_2m_max}
+                temperature_2m_min={temperature_2m_min}
+                />
+            </td>
         </tr>
     );
 }

@@ -8,7 +8,7 @@ export default function Loading() {
       style={{
         display: "flex",
         justifyContent: "center",
-        marginTop: "45Vh",
+        marginTop: "35Vh",
       }}
     >
       <PulseLoader color="#ff4810" />

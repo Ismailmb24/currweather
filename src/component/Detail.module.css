@@ -1,7 +1,6 @@
 .detail {
     display: flex;
     align-items: center;
-    margin: 10px;
     gap: 15px;
     padding: 10px;
     border-radius: 8px;

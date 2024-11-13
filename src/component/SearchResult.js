@@ -1,10 +1,26 @@
 import React from "react";
-import { useFetch } from "../custom/usefetch";
+import PropType from "prop-types";
+import City from "./City";
+import { useCities } from "../CitiesProvider";
+import { useWeather } from "../WeatherProvider";
+import Loading from "./Loading";
 
-export default function SearchResult({location}) {
-    const url = `https://api.opencagedata.com/geocode/v1/json?q=${location}&key=d869cb0a1c894b068be0bc7343714e93`;
-    const {data: {results}} = useFetch(url);
-    results.map(result => {
-         
-    })
+export default function SearchResult() {
+    const {cities, search_loading} = useCities();
+    const {data} = useWeather(); //testing data
+    if(search_loading) return <Loading />;
+    
+    return (
+        <section >
+            {
+                cities.map((city, i) => (
+                    <City key={i} city_data={city} />
+                ))
+            }
+        </section>
+    );
+}
+
+SearchResult.propTypes = {
+    location: PropType.string,
 }

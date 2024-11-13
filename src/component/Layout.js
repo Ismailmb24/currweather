@@ -1,5 +1,5 @@
 import React from "react";
-import Menu from "./Menu";
+import Navs from "./Navs";
 import { Outlet } from "react-router";
 import "./Layout.css";
 //import { WeatherContext } from "../WeatherProvider";
@@ -17,7 +17,7 @@ export default function Layout() {
 
   return (
     <main id="layout">
-      <Menu />
+      <Navs />
       <section id="main">
         <Outlet />
       </section>
