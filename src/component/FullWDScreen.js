@@ -7,7 +7,7 @@ import WeekForcast from "./WeekForcast";
 export default function FullWDScreen({data, loc_data}) {
     return(
         <section>
-            <FullWeatherInfo data={data} loc_data_result={loc_data} />
+            <FullWeatherInfo data={data} />
             <WeatherDetails data={data} />
             <HourlyForcast data={data} />
             <WeekForcast data={data} />

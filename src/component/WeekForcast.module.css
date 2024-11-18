@@ -6,3 +6,6 @@
     border-collapse: collapse;
     width: 100%;
 }
+.forcast_table tr{
+    border-bottom: 1px solid gray;
+}

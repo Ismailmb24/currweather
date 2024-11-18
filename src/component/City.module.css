@@ -36,7 +36,8 @@
 }
 .fav_icon {
     color: gray;
-    font-size: larger;
+    font-size: 30px;
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 768px) {

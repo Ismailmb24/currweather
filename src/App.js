@@ -6,6 +6,7 @@ import Search from "./component/Search";
 import TagCities from "./component/TagCities";
 import Hi from "./HiTest";
 import WeatherSearch from "./component/WeatherSearch";
+import SearchedCityFD from "./component/SearchedCityFD";
 
 function App() {
   return (

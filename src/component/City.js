@@ -7,6 +7,7 @@ import TempInfo from "./TempInfo";
 import WeatherDesc from "./WeatherDesc";
 import AverageTemp from "./AverageTemp";
 import { useFavCities } from "../FavCitiesProvider";
+import { useNavigate } from "react-router";
 
 function City({
     city_data
@@ -19,9 +20,15 @@ function City({
     } = city_data;
 
     const {addFavorite} = useFavCities();
+    const navigate = useNavigate();
 
     return(
-        <section className={style.city}>
+        <section 
+        className={style.city}
+        onClick={() => {
+            navigate(`/search/${id}`);
+        }}
+        >
             <div className={style.header}>
                 <CityName style={style} 
                 icon={<FaLocationCrosshairs />} 
@@ -38,7 +45,10 @@ function City({
                 <div>
                     <FaStar
                     className={style.fav_icon}
-                    onClick={() => addFavorite(id)}
+                    onClick={e => {
+                        e.stopPropagation();
+                        addFavorite(id)
+                    }}
                     />
                 </div>
             </div>

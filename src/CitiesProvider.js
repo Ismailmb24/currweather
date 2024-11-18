@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useReducer, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 import PropTypes from "prop-types";
 import { v4 } from "uuid";
 
@@ -7,6 +7,7 @@ export const useCities =() => useContext(CitiesContext);
 
 export default function CitiesProvider({children}) {
     const [cities, setCities] = useState([]);
+    const [geo_result, setGeoResult] = useState([]);
     const [search_loading, setSearchL] = useState(false);
     console.log("cities: ", cities);
 
@@ -15,7 +16,7 @@ export default function CitiesProvider({children}) {
             ...cities,
             {
                 ...new_city,
-                id: v4(), 
+                id: v4(),
             }
         ]));
     };
@@ -28,11 +29,12 @@ export default function CitiesProvider({children}) {
             const res = await fetch(url);
             const data = await res.json();
             setSearchL(false);
-            console.log("fetched data: ", data);
+            console.log("fetched city data: ", data);
             
             return data;
         } catch(error) {
             console.log("ERROR: ", error);
+            setSearchL(false);
         }
     };
 
@@ -44,12 +46,13 @@ export default function CitiesProvider({children}) {
         : "";
         const data = await fetchData(url);
         console.log(data);
-        const {results} = data
+        const {results} = data;
+        setGeoResult(results);
         console.log(results);
         
         results.map(async result => {
             const {annotations: {timezone}, formatted, geometry: {lat, lng}} = result;
-            const url = `https://api.open-meteo.com/v1/forecast?timezone=${timezone.name}&latitude=${lat}&longitude=${lng}&current=temperature_2m,relative_humidity_2m,is_day,precipitation,rain,weather_code,cloud_cover,wind_speed_10m,wind_direction_10m&hourly=temperature_2m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset,daylight_duration`;
+            const url = `https://api.open-meteo.com/v1/forecast?timezone=${timezone.name}&latitude=${lat}&longitude=${lng}&current=temperature_2m,relative_humidity_2m,is_day,precipitation,rain,weather_code,cloud_cover,wind_speed_10m,wind_direction_10m&hourly=temperature_2m,weather_code,is_day&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset,daylight_duration`;
             const data = await fetchData(url);
             const new_city = {
                 ...data,

@@ -4,17 +4,17 @@ import style from "./HourlyDetail.module.css";
 import { useReadableTime } from "../custom/useReadableTime";
 import TempInfo from "./TempInfo";
 
-export default function HourlyDetail({temp, time, weather_code, is_day}) {
+export default function HourlyDetail({temp, curr_time, time, weather_code, is_day}) {
     const {hours, hours_12, minute_0, format} = useReadableTime(time);
-    const curr_date = new Date();
-    
+    const {hours: curr_hours} = useReadableTime(curr_time);
+
     return(
         <div className={style.hourly}>
             <div className={style.time}>
                 {
-                    curr_date.getHours() == hours
+                    curr_hours == hours
                     ? "Now"
-                    : `${hours}:${minute_0}`
+                    : `${hours_12}:${minute_0}${format.toLowerCase()}`
                 }
             </div>
             <TempInfo 

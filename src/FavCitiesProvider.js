@@ -11,7 +11,7 @@ export default function FavCitiesProvider({children}) {
     const addFavorite = (id) => {
         const new_fav = cities.filter(city => city.id === id);
         const new_cities = [
-            ...cities,
+             ...cities,
             {
                 ...new_fav,
                 favorite: true
@@ -25,7 +25,7 @@ export default function FavCitiesProvider({children}) {
         setFavCities(new_cities_list);
     }
 
-    console.log(fav_cities);
+    console.log("fav city: ", fav_cities);
 
     return(
         <FavCitiesContext.Provider

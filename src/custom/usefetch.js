@@ -12,7 +12,7 @@ export const useFetch = (url) => {
       .then(setData)
       .then(() => setLoading(false))
       .catch(setErrorMsg);
-      console.log(data);
+      console.log("fetched data: ", data);
   }, [url]);
 
   return [

@@ -6,7 +6,7 @@ import { FaGreaterThan, FaLessThan } from "react-icons/fa";
 
 export default function HourlyForcast({data}) {
     const [scrlX, setScrollX] = useState(0);
-    const {hourly} = data;
+    const {current, hourly} = data;
     const hourlyDetails = [...Array(24)].map((detail, i) => ({
         time: hourly.time[i],
         temp: hourly.temperature_2m[i],
@@ -52,7 +52,7 @@ export default function HourlyForcast({data}) {
                 <section id="hourly-forcast" className={style.hourly_forcast}>
                     {
                         hourlyDetails.map((detail, i) => (
-                            <HourlyDetail {...detail} key={i} />
+                            <HourlyDetail key={i} curr_time={current.time} {...detail} />
                         ))
                     }
                 </section>

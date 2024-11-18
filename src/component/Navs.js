@@ -1,6 +1,6 @@
 import React from "react";
 import PageLink from "./PageLink";
-import logo from "./logo.png";
+import logo from "./../media/logo.png";
 import { Grid, Search, Star } from "react-feather";
 import { useActivePage } from "../custom/activepage";
 
