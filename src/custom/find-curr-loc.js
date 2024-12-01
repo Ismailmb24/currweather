@@ -16,8 +16,8 @@ export const useFindCurrLoc = () => {
 
   useEffect(() => {
     const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    setTimeZone(timezone);    
-  })
+    setTimeZone(timezone);
+  });
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -25,10 +25,5 @@ export const useFindCurrLoc = () => {
     }
   }, []);
 
-  return [
-    longitude,
-    latitude,
-    timezone,
-    denied,
-  ];
+  return [longitude, latitude, timezone, denied];
 };

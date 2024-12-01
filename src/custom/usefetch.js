@@ -10,15 +10,12 @@ export const useFetch = (url) => {
     fetch(url)
       .then((res) => res.json())
       .then(setData)
-      .catch(error => {
+      .catch((error) => {
         setErrorMsg(error);
         console.log("ERROR: ", error);
-      }).then(() => setLoading(false));
+      })
+      .then(() => setLoading(false));
   }, [url]);
 
-  return [
-    data,
-    loadingFeedback,
-    errorMsg,
-  ];
+  return [data, loadingFeedback, errorMsg];
 };

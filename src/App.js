@@ -1,13 +1,13 @@
 import React from "react";
-import Layout from "./component/Layout";
+import Layout from "./components/Layout";
 import { Route, Routes } from "react-router";
-import Home from "./component/Home";
-import Search from "./component/Search";
-import Favorite from "./component/Favorite";
-import WeatherSearch from "./component/WeatherSearch";
-import SearchedCityFD from "./component/SearchedCityFD";
-import FavLocList from "./component/FavLocList";
-import NotFound from "./component/NotFound";
+import Home from "./components/Home";
+import Search from "./components/Search";
+import Favorite from "./components/Favorite";
+import WeatherSearch from "./components/WeatherSearch";
+import SearchedCityFD from "./components/SearchedCityFD";
+import FavLocList from "./components/FavLocList";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
