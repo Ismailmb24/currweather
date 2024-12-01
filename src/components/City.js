@@ -8,6 +8,7 @@ import WeatherDesc from "./WeatherDesc";
 import AverageTemp from "./AverageTemp";
 import { useLocation, useNavigate } from "react-router";
 import { useCities } from "../CitiesProvider";
+
 function City({ data, id, name, set_base = (f) => f }) {
   const loc = useLocation();
   const loc_data = {
@@ -29,12 +30,21 @@ function City({ data, id, name, set_base = (f) => f }) {
     console.log("loc_data: ", loc_data);
   }, []);
 
+  const handleClick = () => {
+    navigate(`${loc.pathname}/${id}`);
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleClick();
+    }
+  };
   return (
     <section
       className={style.city}
-      onClick={() => {
-        navigate(`${loc.pathname}/${id}`);
-      }}
+      onClick={handleClick}
+      onKeyDown={handleKeyDown}
+      tabIndex={0}
     >
       <div className={style.header}>
         <CityName
