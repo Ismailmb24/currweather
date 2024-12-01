@@ -10,9 +10,10 @@ export const useFetch = (url) => {
     fetch(url)
       .then((res) => res.json())
       .then(setData)
-      .then(() => setLoading(false))
-      .catch(setErrorMsg);
-      console.log("fetched data: ", data);
+      .catch(error => {
+        setErrorMsg(error);
+        console.log("ERROR: ", error);
+      }).then(() => setLoading(false));
   }, [url]);
 
   return [

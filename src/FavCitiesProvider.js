@@ -1,39 +1,32 @@
 import React, { createContext, useContext, useState } from "react";
+import PropTypes from "prop-types";
 import { useCities } from "./CitiesProvider";
 
 const FavCitiesContext = createContext();
 export const useFavCities = () => useContext(FavCitiesContext);
 
-export default function FavCitiesProvider({children}) {
-    const [fav_cities, setFavCities] = useState([]);
-    
-    const {cities} = useCities();
-    const addFavorite = (id) => {
-        const new_fav = cities.filter(city => city.id === id);
-        const new_cities = [
-             ...cities,
-            {
-                ...new_fav,
-                favorite: true
-            }
-        ];
-        setFavCities(new_cities);
-    }
+export default function FavCitiesProvider({ children }) {
+  const { fav_list } = useCities();
+  const [fav_list_w_data, setFavListW] = useState([]);
 
-    const removeFavorite = (id) => {
-        new_cities_list = fav_cities.filter(city => city.id !== id);
-        setFavCities(new_cities_list);
-    }
+  const addLoc = (new_city) => {
+    setFavListW((cities) => [...cities, new_city]);
+  };
 
-    console.log("fav city: ", fav_cities);
-
-    return(
-        <FavCitiesContext.Provider
-        value={{
-            fav_cities,
-            addFavorite,
-            removeFavorite,
-        }}
-        > { children } </FavCitiesContext.Provider>
-    );
+  return (
+    <FavCitiesContext.Provider
+      value={{
+        fav_list,
+        fav_list_w_data,
+        addLoc,
+      }}
+    >
+      {" "}
+      {children}{" "}
+    </FavCitiesContext.Provider>
+  );
 }
+
+FavCitiesProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};

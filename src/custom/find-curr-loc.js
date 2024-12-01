@@ -16,15 +16,12 @@ export const useFindCurrLoc = () => {
 
   useEffect(() => {
     const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    setTimeZone(timezone);
-    console.log(timezone);
-    
+    setTimeZone(timezone);    
   })
 
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(setLoc, statusSetter);
-      console.log("finding location");
     }
   }, []);
 

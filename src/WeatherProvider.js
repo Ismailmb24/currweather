@@ -1,16 +1,13 @@
-import React, { createContext, useContext, useReducer, useState } from "react";
-import weatherData from "./data.json";
-import cityData from "./data/geodata.json";
+import React, { createContext, useContext } from "react";
 import { useFindCurrLoc } from "./custom/find-curr-loc";
 import { useFetch } from "./custom/usefetch";
 import PropTypes from "prop-types";
 
 const WeatherContext = createContext();
-export const useWeather = () =>  useContext(WeatherContext);
+export const useWeather = () => useContext(WeatherContext);
 
 export default function WeatherProvider({ children }) {
-  
-  const [longitude, latitude, timezone, denied ] = useFindCurrLoc();
+  const [longitude, latitude, timezone, denied] = useFindCurrLoc();
 
   const url =
     longitude && latitude
@@ -23,18 +20,14 @@ export default function WeatherProvider({ children }) {
       : "";
 
   const [weather_data, loadingFeedback, errorMsg] = useFetch(url);
-  const [{results: [{components: {city}}]}] = useFetch(geo_url);
-  // const [data] = useState(weatherData);  //weather testing data
-  // const [{results: [curr_loc]}] = useState(cityData); //geolocation testing data
+  const [geocode] = useFetch(geo_url);
+  const { results } = geocode || {};
+  const { components } = results?.[0] || {};
+  const { city: loc_name } = components || {};
   const data = {
     ...weather_data,
-    city
-  }
-
-  console.log("geocode: ", geocode);
-  console.log("weather: ", weather_data);
-  console.log("fake loc: ", curr_loc);
-  console.log("fake weather:", weatherData);
+    loc_name,
+  };
 
   return (
     <WeatherContext.Provider
@@ -44,7 +37,10 @@ export default function WeatherProvider({ children }) {
         errorMsg,
         denied,
       }}
-    > {children} </WeatherContext.Provider>
+    >
+      {" "}
+      {children}{" "}
+    </WeatherContext.Provider>
   );
 }
 

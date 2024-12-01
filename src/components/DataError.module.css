@@ -1,0 +1,23 @@
+.fallback_sec {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.individual{
+    margin: 5px 0;
+    text-align: center;
+}
+.icon_wraper {
+    text-align: center;
+}
+.loc_off_icon {
+    width: 30%;
+}
+
+@media only screen and (min-width: 980px) {
+    .loc_off_icon {
+        width: 20%;
+    }
+}

@@ -1,34 +1,27 @@
-import clear_sky_day from "./../media/svg/clear-day.svg";
-import clear_sky_night from "./../media/svg/clear-night.svg";
-import maily_cloudy_day from "./../media/svg/cloudy-day-1.svg";
-import maily_cloudy_night from "./../media/svg/cloudy-night-1.svg";
-import partly_cloudy_day from "./../media/svg/fair-day.svg";
-import partly_cloudy_night from "./../media/svg/fair-night.svg";
-import cloudy from "./../media/svg/cloudy.svg"
-import fog_day from "./../media/svg/cloudy-day-1.svg";
-import fog_night from "./../media/svg/cloudy-day-1.svg";
-import drizzle from "./../media/svg/rainy-4.svg";
-import freezing_drizzle from "./../media/svg/rain-and-snow-mix.svg";
-import light_rain from "./../media/svg/rainy-1.svg";
-import moderate_rain from "./../media/svg/rainy-2.svg";
-import heavy_rain from "./../media/svg/rainy-3.svg";
-import freezing_rain from "./../media/svg/clear-day.svg";
-import light_snowfall from "./../media/svg/snowy-1.svg";
-import moderate_snowfall from "./../media/svg/snowy-2.svg";
-import heavy_snowfall from "./../media/svg/snowy-3.svg";
-import snow_grain  from "./../media/svg/snowy-4.svg";
-import light_rainshower_day from "./../media/svg/rainy-1-day.svg"
-import light_rainshower_night from "./../media/svg/rainy-1-night.svg";
-import moderate_rainshower_day from "./../media/svg/rainy-2-day.svg";
-import moderate_rainshower_night from "./../media/svg/rainy-2-night.svg";
-import violent_rainshower_day from "./../media/svg/rainy-3-day.svg";
-import violent_rainshower_night from "./../media/svg/rainy-3-night.svg";
-import light_snowshower_day from "./../media/svg/snowy-1-day.svg";
-import light_snowshower_night from "./../media/svg/snowy-1-night.svg";
-import violent_snowshower_day from "./../media/svg/snowy-3-day.svg";
-import violent_snowshower_night from "./../media/svg/snowy-3-night.svg"
-import thunderstorm from "./../media/svg/isolated-thunderstorms.svg";
-import thunderstorm_with_hail from "./../media/svg/scattered-thunderstorms.svg"
+import clear_sky_day from "../media/clear-day.png";
+import clear_sky_night from "../media/clear-night.png";
+import maily_cloudy_day from "../media/cloudy-day-1.png";
+import maily_cloudy_night from "../media/cloudy-night-1.png";
+import partly_cloudy_day from "../media/fair-day.png";
+import partly_cloudy_night from "../media/fair-night.png";
+import cloudy from "../media/cloudy.png"
+import fog_day from "../media/fog-day.png";
+import fog_night from "../media/fog-night.png";
+import drizzle from "../media/drizzle.png";
+import freezing_drizzle from "../media/freezing-drizzle.png";
+import light_rain from "../media/rainy-1.png";
+import moderate_rain from "../media/rainy-2.png";
+import heavy_rain from "../media/rainy-3.png";
+import freezing_rain from "../media/freezing-rain.png";
+import light_snowfall from "../media/snowy-1.png";
+import moderate_snowfall from "../media/snowy-2.png";
+import heavy_snowfall from "../media/snow-grain.png";
+import snow_grain  from "../media/snow-grain.png";
+import rainshower_day from "../media/rainy-day.png"
+import rainshower_night from "../media/rainy-night.png";
+import snowshower_day from "../media/snowy-day.png";
+import snowshower_night from "../media/snowy-night.png";
+import thunderstorm from "../media/thunder.png"
 
 export const weather_code_int = {
     0: {
@@ -81,14 +74,14 @@ export const weather_code_int = {
             night: drizzle
         }
     },
-    52: {
+    53: {
         name: "Moderate drizzel",
         icons: {
             day: drizzle,
             night: drizzle
         }
     },
-    53: {
+    55: {
         name: "Dence drizzel",
         icons: {
             day: drizzle,
@@ -116,7 +109,7 @@ export const weather_code_int = {
             night: light_rain
         }
     },
-    62: {
+    63: {
         name: "Moderate rain",
         icons: {
             day: moderate_rain,
@@ -151,14 +144,14 @@ export const weather_code_int = {
             night: light_snowfall
         }
     },
-    72: {
+    73: {
         name: "Moderate snowfall",
         icons: {
             day: moderate_snowfall,
             night: moderate_snowfall
         }
     },
-    73: {
+    75: {
         name: "Heavy snowfall",
         icons: {
             day: heavy_snowfall,
@@ -175,36 +168,36 @@ export const weather_code_int = {
     80: {
         name: "Light rain showers",
         icons: {
-            day: light_rainshower_day,
-            night: light_rainshower_night
+            day: rainshower_day,
+            night: rainshower_night
         }
     },
     81: {
         name: "Moderate rain showers",
         icons: {
-            day: moderate_rainshower_day,
-            night: moderate_rainshower_night
+            day: rainshower_day,
+            night: rainshower_night
         }
     },
     82: {
         name: "Violent rain showers",
         icons: {
-            day: violent_rainshower_day,
-            night: violent_rainshower_night
+            day: rainshower_day,
+            night: rainshower_night
         }
     },
     85: {
         name: "Light snow showers",
         icons: {
-            day: light_snowshower_day,
-            night: light_snowshower_night
+            day: snowshower_day,
+            night: snowshower_night
         }
     },
     86: {
         name: "violent snow showers",
         icons: {
-            day: violent_snowshower_day,
-            night: violent_snowshower_night
+            day: snowshower_day,
+            night: snowshower_night
         }
     },
     95: {
@@ -215,17 +208,17 @@ export const weather_code_int = {
         }
     },
     96: {
-        name: "Thunderstarom with hail",
+        name: "Thunderstorm with hail",
         icons: {
-            day: thunderstorm_with_hail,
-            night: thunderstorm_with_hail
+            day: thunderstorm,
+            night: thunderstorm
         }
     },
     99: {
-        name: "Thunderstarom with hail",
+        name: "Thunderstorm with hail",
         icons: {
-            day: thunderstorm_with_hail,
-            night: thunderstorm_with_hail
+            day: thunderstorm,
+            night: thunderstorm
         }
     },
 }

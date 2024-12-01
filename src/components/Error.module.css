@@ -1,0 +1,24 @@
+.error {
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+.individual {
+    margin: 5px 0;
+    text-align: center;
+}
+.icon_wraper {
+    margin: 50px 0;
+    text-align: center;
+}
+.error_icon{
+    width: 40%;
+}
+
+@media only screen and (min-width: 980px) {
+    .error_icon {
+        width: 20%;
+    }
+}

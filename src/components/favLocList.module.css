@@ -1,0 +1,21 @@
+.fav_icon {
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.icon {
+    width: 50%;
+}
+.fav_head {
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+@media only screen and (min-width: 980px) {
+    .icon {
+        width: 20%;
+    }
+}

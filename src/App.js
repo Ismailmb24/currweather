@@ -3,10 +3,11 @@ import Layout from "./component/Layout";
 import { Route, Routes } from "react-router";
 import Home from "./component/Home";
 import Search from "./component/Search";
-import TagCities from "./component/TagCities";
-import Hi from "./HiTest";
+import Favorite from "./component/Favorite";
 import WeatherSearch from "./component/WeatherSearch";
 import SearchedCityFD from "./component/SearchedCityFD";
+import FavLocList from "./component/FavLocList";
+import NotFound from "./component/NotFound";
 
 function App() {
   return (
@@ -15,10 +16,14 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/search" element={<Search />}>
           <Route index element={<WeatherSearch />} />
-          <Route path=":id" element={<Hi />} />
+          <Route path=":id" element={<SearchedCityFD />} />
         </Route>
-        <Route path="/tagcities" element={<TagCities />} />
+        <Route path="/favorite" element={<Favorite />}>
+          <Route index element={<FavLocList />} />
+          <Route path=":id" element={<SearchedCityFD />} />
+        </Route>
       </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

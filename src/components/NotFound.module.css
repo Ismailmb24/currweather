@@ -1,0 +1,15 @@
+.notFoundContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    text-align: center;
+    background-color: #f0f0f0; /* Optional: Add a background color */
+}
+
+.notFoundContent {
+    max-width: 600px;
+    padding: 20px;
+    background-color: white; /* Optional: Add a background color for the content */
+    color: #ff4810;
+}

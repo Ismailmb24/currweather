@@ -19,7 +19,7 @@ root.render(
         </CitiesProvider>
       </WeatherProvider>
     </Router>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
 
 registerSW();
