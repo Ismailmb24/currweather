@@ -1,0 +1,26 @@
+{
+  "short_name": "CurrWeather",
+  "name": "Current Weather",
+  "orientation": "portrait-primary",
+  "form-factor": "wide",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/img/logo64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/img/logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

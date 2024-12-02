@@ -10,7 +10,6 @@ export default function SearchedCityFD() {
   const { cities } = useCities();
 
   const curr_city = cities && cities.find((city) => city.id == id);
-
   if (!curr_city) {
     return <NotFound />;
   }
