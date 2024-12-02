@@ -27,7 +27,7 @@ export default function CitiesProvider({ children }) {
   const addFavLoc = (id) => {
     const fav_loc_list = fav_list;
     const target_loc = fav_loc_list.findIndex((loc) => loc.id === id);
-    console.log("target ID", target_loc);
+
     //if the location is not in the favorite list
     if (target_loc === -1) {
       //this block of code add the location to favorite list if it is not in the list
@@ -52,7 +52,6 @@ export default function CitiesProvider({ children }) {
       const res = await fetch(url);
       const data = await res.json();
       setSearchL(false);
-      console.log("fetched city data: ", data);
       return data;
     } catch (error) {
       console.log("ERROR: ", error);

@@ -8,6 +8,7 @@ export const useFavCities = () => useContext(FavCitiesContext);
 export default function FavCitiesProvider({ children }) {
   const { fav_list } = useCities();
   const [fav_list_w_data, setFavListW] = useState([]);
+  console.log("fav_list_w_data", fav_list_w_data);
 
   const addLoc = (new_city) => {
     setFavListW((cities) => [...cities, new_city]);

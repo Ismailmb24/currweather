@@ -8,6 +8,7 @@ import WeatherSearch from "./components/WeatherSearch";
 import SearchedCityFD from "./components/SearchedCityFD";
 import FavLocList from "./components/FavLocList";
 import NotFound from "./components/NotFound";
+import FavCityFD from "./components/FavCityFD";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
         </Route>
         <Route path="/favorite" element={<Favorite />}>
           <Route index element={<FavLocList />} />
-          <Route path=":id" element={<SearchedCityFD />} />
+          <Route path=":id" element={<FavCityFD />} />
         </Route>
       </Route>
       <Route path="*" element={<NotFound />} />

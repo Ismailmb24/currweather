@@ -27,7 +27,6 @@ function City({ data, id, name, set_base = (f) => f }) {
 
   useEffect(() => {
     set_base(loc_data);
-    console.log("loc_data: ", loc_data);
   }, []);
 
   const handleClick = () => {

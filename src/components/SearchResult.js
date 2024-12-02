@@ -10,7 +10,6 @@ import Fetch from "./Fetch";
 
 export default function SearchResult() {
   const { result_loc, addCity, search_loading, search_query } = useCities();
-  console.log("citieeeeeees: ", result_loc);
 
   if (search_loading) return <Loading />;
 
