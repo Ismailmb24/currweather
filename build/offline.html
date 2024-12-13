@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="offline.css">
+    <title>CurrWeather</title>
+    <style>
+        body {
+            font-family: Roboto, Arial sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+       
+       #offline-sec {
+            text-align: center;
+        }
+        .logo {
+            width: 35%;
+        }
+        .desc {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .offline {
+            width: 35px;
+        }
+
+        @media only screen and (min-width: 980px)  {
+            .logo {
+                width: 15%;
+            }   
+        }
+    </style>
+</head>
+<body>
+      <div id="offline-sec">
+        <div id="logo-img-wraper">
+            <img src="img/logo.png" alt="logo" class="logo" />
+        </div>
+        <div class="desc">
+            <img src="svg/wifi-off.svg" alt="offline" class="offline" />
+            <h1>Offline</h1> 
+        </div>
+    </div>
+    <script>
+        const doc_height = window.innerHeight;
+        const target_el = document.getElementById("offline-sec");
+        const target_el_height = target_el.offsetHeight;
+        const margin_top = (doc_height - target_el_height) / 2;
+        target_el.style.marginTop = `${margin_top}px`;
+        console.log(margin_top);
+        
+    </script>
+</body>
+</html>
